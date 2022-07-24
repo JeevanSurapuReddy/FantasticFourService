@@ -1,4 +1,4 @@
-package com.devglan.springbootazure.model;
+package com.ffour.order.model;
 
 public class Product {
 	private String id;

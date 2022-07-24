@@ -9,10 +9,10 @@
 		<version>2.1.9.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.devglan</groupId>
-	<artifactId>spring-boot-azure</artifactId>
+	<groupId>com.ffour</groupId>
+	<artifactId>order</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-azure</name>
+	<name>order</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
