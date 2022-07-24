@@ -1,15 +1,21 @@
-package com.ffour.order.service;
+package com.devglan.springbootazure;
 
-import com.ffour.order.model.Product;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
+import com.devglan.springbootazure.model.Product;
 import com.microsoft.azure.storage.OperationContext;
 import com.microsoft.azure.storage.StorageException;
 import com.microsoft.azure.storage.blob.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -17,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class OrderService {
+public class AzureBlobAdapter {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AzureBlobAdapter.class);
 
     @Autowired
     private CloudBlobClient cloudBlobClient;
@@ -27,6 +33,13 @@ public class OrderService {
     @Autowired
     private CloudBlobContainer cloudBlobContainer;
     
+//    public AzureBlobAdapter() {
+//    	BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
+//    		    .endpoint("<your-storage-account-url>")
+//    		    .sasToken("<your-sasToken>")
+//    		    .buildClient();
+//    }
+
     public boolean createContainer(String containerName){
         boolean containerCreated = false;
         CloudBlobContainer container = null;

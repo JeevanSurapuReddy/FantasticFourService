@@ -1,13 +1,13 @@
-package com.ffour.order;
+package com.devglan.springbootazure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FantasticFourService {
+public class SpringBootAzureApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FantasticFourService.class, args);
+		SpringApplication.run(SpringBootAzureApplication.class, args);
 	}
 
 }
